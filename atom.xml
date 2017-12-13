@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://lvyoucoder.github.io/"/>
-  <updated>2017-11-21T07:10:36.692Z</updated>
+  <updated>2017-12-13T02:12:57.383Z</updated>
   <id>http://lvyoucoder.github.io/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Linux下升级Nodejs</title>
+    <link href="http://lvyoucoder.github.io/2017/12/12/Linux%E4%B8%8B%E5%8D%87%E7%BA%A7Nodejs/"/>
+    <id>http://lvyoucoder.github.io/2017/12/12/Linux下升级Nodejs/</id>
+    <published>2017-12-12T09:23:39.000Z</published>
+    <updated>2017-12-13T02:12:57.383Z</updated>
+    
+    <content type="html"><![CDATA[<p>Linux下升级nodejs,亲测有效<br><a id="more"></a></p><p>系统:ubuntu 16.04 LTS</p><p>查看资料说是有三种方法可以升级nodejs,我是用的npm的模块n.(如有错误,欢迎指正)</p><h5 id="第一步-安装n"><a href="#第一步-安装n" class="headerlink" title="第一步 安装n"></a>第一步 安装n</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm cache clean -f  </span><br><span class="line">npm install -g n</span><br></pre></td></tr></table></figure><p>这一步大部分不会出错.</p><h5 id="第二步-安装新版本的nodejs"><a href="#第二步-安装新版本的nodejs" class="headerlink" title="第二步 安装新版本的nodejs"></a>第二步 安装新版本的nodejs</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">n stable</span><br></pre></td></tr></table></figure><p>这一步可能会报错,报错信息如下:   </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n stable</span><br><span class="line">mkdir: cannot create directory ‘/usr/local/n’: Permission denied</span><br><span class="line">mkdir: cannot create directory ‘/usr/local/n’: Permission denied</span><br><span class="line"></span><br><span class="line">     install : node-v9.2.1</span><br><span class="line">       mkdir : /usr/local/n/versions/node/9.2.1</span><br><span class="line">mkdir: cannot create directory ‘/usr/local/n’: Permission denied</span><br></pre></td></tr></table></figure><p>但是加上sudo也会报错,报错信息如下:  </p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo n stable</span><br><span class="line">sudo: n: command not found</span><br></pre></td></tr></table></figure><p><strong>原因是当 sudo以管理权限执行命令的时候，linux将PATH环境变量进行了重置,使得sudo搜索的路径不是我们想要的PATH变量的路径,因此就找不到我们想要的命令了</strong></p><h5 id="解决办法如下"><a href="#解决办法如下" class="headerlink" title="解决办法如下"></a>解决办法如下</h5>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo -E env &quot;PATH=$PATH&quot; n stable</span><br></pre></td></tr></table></figure><p>这样就能安装成功啦!</p><p>参考资料:<br>1.<a href="https://www.sharmaprakash.com.np/nodejs/upgrade-nodejs-using-npm/" target="_blank" rel="external">https://www.sharmaprakash.com.np/nodejs/upgrade-nodejs-using-npm/</a><br>2.<a href="http://www.hostingadvice.com/how-to/update-node-js-latest-version/" target="_blank" rel="external">http://www.hostingadvice.com/how-to/update-node-js-latest-version/</a><br>3.<a href="https://www.cnblogs.com/A-Song/archive/2013/03/09/2951951.html" target="_blank" rel="external">https://www.cnblogs.com/A-Song/archive/2013/03/09/2951951.html</a></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Linux下升级nodejs,亲测有效&lt;br&gt;
+    
+    </summary>
+    
+      <category term="javascript" scheme="http://lvyoucoder.github.io/categories/javascript/"/>
+    
+    
+      <category term="nodejs" scheme="http://lvyoucoder.github.io/tags/nodejs/"/>
+    
+  </entry>
+  
+  <entry>
     <title>js中ajax调用http接口</title>
     <link href="http://lvyoucoder.github.io/2017/11/15/js%E4%B8%ADajax%E8%B0%83%E7%94%A8http%E6%8E%A5%E5%8F%A3/"/>
     <id>http://lvyoucoder.github.io/2017/11/15/js中ajax调用http接口/</id>
     <published>2017-11-15T09:35:47.000Z</published>
-    <updated>2017-11-21T07:10:36.692Z</updated>
+    <updated>2017-11-21T07:10:36.693Z</updated>
     
     <content type="html"><![CDATA[<p>前言<br> github pages</p> <a id="more"></a><p> stars</p>]]></content>
     
